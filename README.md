@@ -1,1 +1,3 @@
 # TS-course
+
+Hello, typescritp
