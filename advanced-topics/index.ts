@@ -21,3 +21,48 @@ function logObject(obj: { a: 1 } | { b: number }) {
     console.log(obj.b);
   }
 }
+
+enum RequestTypes {
+  GET = 'get',
+  POST = 'post',
+}
+type httpMethod = 'post' | 'get';
+type coolString = string;
+
+function fetchWIthAuth(url: string, method: httpMethod) {
+  fetch(url);
+}
+
+fetchWIthAuth('s', 'post');
+// type User = {
+//   name: string;
+//   age: number;
+//   skills: string[];
+// };
+type Role = {
+  id: number;
+};
+// type USerWIthRole = User & Role
+
+interface User {
+  name: string;
+  age: number;
+  skills: string[];
+
+  log: (id: number) => string;
+}
+interface UserWithRole extends User {
+  roleId: number;
+}
+
+let user: User = {
+  name: 'as',
+  age: 33,
+  skills: ['1', '2'],
+  log() {
+    return 'ha';
+  },
+};
+interface UserDic {
+  [index: number]: User;
+}
